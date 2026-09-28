@@ -1,0 +1,286 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+
+    font-family: Arial, sans-serif;
+
+    background: #0f172a;
+    color: white;
+
+    text-align: center;
+}
+
+h1 {
+    color: #38bdf8;
+    margin-bottom: 25px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+}
+
+input {
+    width: 180px;
+
+    padding: 12px;
+
+    border-radius: 8px;
+    border: 2px solid #475569;
+
+    background: #1e293b;
+    color: white;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+input:focus {
+    border-color: #38bdf8;
+}
+
+button {
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #0284c7;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background: #0369a1;
+}
+
+button.delete {
+    background: #dc2626;
+}
+
+button.delete:hover {
+    background: #b91c1c;
+}
+
+button.search {
+    background: #7c3aed;
+}
+
+button.search:hover {
+    background: #6d28d9;
+}
+
+button.reset {
+    background: #475569;
+}
+
+button.reset:hover {
+    background: #334155;
+}
+
+#message {
+    color: #facc15;
+
+    font-weight: bold;
+
+    min-height: 25px;
+
+    margin: 15px;
+}
+
+.info {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.info div {
+    min-width: 120px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: #1e293b;
+
+    border: 1px solid #334155;
+}
+
+.info span {
+    display: block;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+}
+
+.info strong {
+    display: block;
+
+    color: #38bdf8;
+
+    font-size: 20px;
+
+    margin-top: 5px;
+}
+
+.tree-container {
+    position: relative;
+
+    width: 100%;
+    height: 600px;
+
+    overflow: auto;
+
+    background: #020617;
+
+    border: 2px solid #334155;
+
+    border-radius: 12px;
+}
+
+#treeSvg {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+}
+
+#treeNodes {
+    position: relative;
+
+    min-width: 1000px;
+    min-height: 600px;
+}
+
+.node {
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #0284c7;
+
+    border: 4px solid #38bdf8;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2;
+
+    transition: all 0.4s ease;
+
+    box-shadow:
+        0 0 15px
+        rgba(56, 189, 248, 0.4);
+}
+
+.node .value {
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+.node .details {
+    font-size: 10px;
+
+    margin-top: 3px;
+
+    color: #e0f2fe;
+}
+
+.node.found {
+    background: #eab308;
+
+    border-color: #fef08a;
+
+    color: black;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.25);
+
+    box-shadow:
+        0 0 30px
+        rgba(234, 179, 8, 0.9);
+}
+
+.edge {
+    stroke: #64748b;
+
+    stroke-width: 3;
+}
+
+.traversal {
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: #1e293b;
+
+    border-radius: 10px;
+}
+
+.traversal h3 {
+    color: #38bdf8;
+}
+
+#traversalOutput {
+    color: #4ade80;
+
+    font-family: monospace;
+
+    font-size: 18px;
+}
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .info {
+        flex-wrap: wrap;
+    }
+
+    .tree-container {
+        height: 500px;
+    }
+
+    button {
+        padding: 10px 12px;
+    }
+
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AVL Tree Visualization</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>🌳 AVL Tree Visualization</h1>
+
+    <div class="controls">
+
+        <input
+            type="number"
+            id="valueInput"
+            placeholder="Enter value"
+        >
+
+        <button onclick="insertNode()">Insert</button>
+
+        <button onclick="deleteNode()" class="delete">
+            Delete
+        </button>
+
+        <button onclick="searchNode()" class="search">
+            Search
+        </button>
+
+        <button onclick="resetTree()" class="reset">
+            Reset
+        </button>
+
+    </div>
+
+    <div id="message">
+        Enter a value and choose an operation.
+    </div>
+
+    <div class="info">
+
+        <div>
+            <span>Root</span>
+            <strong id="rootValue">-</strong>
+        </div>
+
+        <div>
+            <span>Height</span>
+            <strong id="treeHeight">0</strong>
+        </div>
+
+        <div>
+            <span>Nodes</span>
+            <strong id="nodeCount">0</strong>
+        </div>
+
+    </div>
+
+    <div class="tree-container">
+
+        <svg id="treeSvg"></svg>
+
+        <div id="treeNodes"></div>
+
+    </div>
+
+    <div class="traversal">
+
+        <h3>In-order Traversal</h3>
+
+        <p id="traversalOutput">
+            Empty
+        </p>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
